@@ -24,6 +24,12 @@
     <link rel="stylesheet " href="/assets/styles/main.css" />
     <link rel="stylesheet " href="/assets/styles/responsive.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height =
+          obj.contentWindow.document.documentElement.scrollHeight + 'px';
+      }
+    </script>
   </head>
   <body>
     <div class="app overflow-hidden">
@@ -38,7 +44,7 @@
                 alt=""
                 class="logo w-[69px] mr-5"
               />
-              <p class="logo-text">PET TAG</p>
+              <p class="logo-text">CARD</p>
             </div>
             <i
               id="mobile-bar"
@@ -65,7 +71,7 @@
       ></div>
       <div
         id="mobile-menu"
-        class="hidden w-[50%] h-[100vh] py-5 fixed top-0 right-0 bg-[#33323F] text-[#eee] z-[70]"
+        class="hidden w-[50%] h-[100vh] py-5 fixed top-0 right-0 bg-[#33323F] text-[#eee] z-[99]"
       >
         <div class="px-3 mb-5 flex justify-between items-center">
           <img src="/assets/images/logo.png" alt="" /><i
@@ -119,11 +125,11 @@
           >
         </ul>
       </div>
-      <main>
+      <main class="relative">
+        <img src="/assets/images/ellipse1.png" alt="" class="ellipse1" />
+        <img src="/assets/images/ellipse2.png" alt="" class="ellipse2" />
         <div class="container">
-          <div
-            class="banner relative flex justify-between items-center mb-[70px]"
-          >
+          <div class="banner relative flex justify-between items-center">
             <div class="banner-content w-[60%]">
               <p class="banner-sub hiddenLeft">
                 Thẻ Thông Minh - Danh thiếp thông minh ID-Card
@@ -133,7 +139,7 @@
               </p>
               <div class="banner-btn hiddenLeft">
                 <button class="explore-btn">KHÁM PHÁ</button
-                ><button class="shop-btn">MUA NGAY</button>
+                ><button class="buy-btn">MUA NGAY</button>
               </div>
               <div class="flex hiddenLeft">
                 <img src="/assets/images/play.png" alt="" class="mr-3" /><span
@@ -228,7 +234,7 @@
           </div>
           <div class="collections relative mb-[70px]">
             <p class="collections-heading hiddenLeft">TOP COLLECTIONS</p>
-            <div class="collection-list grid grid-cols-4 gap-[40px]">
+            <div class="collection-list grid grid-cols-4 gap-[20px]">
               <div class="collection-item hiddenLeft">
                 <img
                   src="/assets/images/prd1.png"
@@ -343,7 +349,7 @@
               </div>
             </div>
           </div>
-          <div class="why relative mb-10">
+          <div class="why relative">
             <!-- <img
               src="/assets/images/why-ellipse.png"
               alt=""
@@ -396,11 +402,12 @@
               <img src="/assets/images/banner-img.png" alt="" class="why-img" />
             </div>
           </div>
+        </div>
+
+        <div class="tech-wrapper">
           <div class="tech relative mb-[80px] text-center">
             <div class="video-container">
               <iframe
-                width="999.6"
-                height="562.275"
                 src="https://www.youtube.com/embed/JdzMTwjQBrE"
                 title="YouTube video player"
                 frameborder="0"
@@ -410,13 +417,15 @@
               ></iframe>
             </div>
           </div>
+        </div>
+        <div class="features-wrapper">
           <div class="features mb-20">
             <div class="feature-list hiddenRight">
               <div
-                class="tabs p-2 flex justify-between bg-[#F2F1ED] rounded-[15px]"
+                class="tabs p-4 flex justify-between bg-[#F2F2F1] rounded-[50px]"
               >
                 <div class="tablinks active" data-tab="tab1">
-                  <p>Chỉ 1 Chạm</p>
+                  <p>Chỉ một chạm</p>
                 </div>
                 <div class="tablinks" data-tab="tab2">
                   <p>Sử dụng mãi mãi</p>
@@ -471,11 +480,7 @@
                         </div>
                       </div>
                     </div>
-                    <img
-                      src="./assets/images/feature1-img.png"
-                      alt=""
-                      class=""
-                    />
+                    <img src="./assets/images/banner-img.png" alt="" class="" />
                   </div>
                 </div>
                 <div id="tab2" class="tabcontent">
@@ -629,32 +634,112 @@
             </div>
           </div>
         </div>
-        <img
-          src="/assets/images/social-banner.png"
-          alt=""
-          class="social-banner w-full mb-20"
-        />
-        <div class="compare relative mb-10">
-          <img
-            src="/assets/images/compare.png"
-            alt=""
-            class="compare-img mx-auto hiddenLeft"
-          />
-          <img
-            src="/assets/images/compare-ellipse.png"
-            alt=""
-            class="compare-ellipse1 absolute top-[-40%] left-0 z-[-1]"
-          />
-          <img
-            src="/assets/images/compare-ellipse2.png"
-            alt=""
-            class="compare-ellipse2 absolute right-0 top-[0%] w-full z-[-1]"
-          />
+        <div class="compare relative mb-20">
+          <div class="compare-main">
+            <div class="compare-heading">
+              <div class="compare-title">
+                <p class="compare-text">ID-Card</p>
+                <p class="compare-sub font-[500]">
+                  Với danh thiếp truyền thống
+                </p>
+              </div>
+              <div class="compare-yesno">
+                <p class="compare-col">Truyền thống</p>
+                <p class="compare-col">ID-Card</p>
+              </div>
+            </div>
+            <div class="compare-list">
+              <div class="compare-item">
+                <p>1 thẻ duy nhất</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Chống nước, kháng bụi</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Tùy chỉnh thông tin</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Kết nối chỉ 1 chạm</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Lưu danh bạ</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Tìm chính xác mạng xã hội</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Gọi điện trực tiếp</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Tiết kiệm chi phí hơn</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Công nghệ lưu trữ đám mây</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Chia sẻ thông tin đa nền tảng</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Thông tin trên thẻ không giới hạn</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+              <div class="compare-item">
+                <p>Tích hợp ngân hàng, âm nhạc, ứng dụng</p>
+                <div>
+                  <div><img src="/assets/images/compare-no.png" alt="" /></div>
+                  <div><img src="/assets/images/compare-yes.png" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="question px-[17%] py-10 mb-[50px] text-center">
-          <b class="hiddenLeft">Câu hỏi thường gặp !!</b>
+        <div class="question px-[25%] py-10 text-center">
+          <b class="hiddenLeft">Câu hỏi thường gặp</b>
           <div class="answers-list mt-7">
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck1" />
               <label class="tab-label" for="chck1">Lần đầu sử dụng ?</label>
               <div class="tab-content">
@@ -672,7 +757,7 @@
                 </p>
               </div>
             </div>
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck2" />
               <label class="tab-label" for="chck2"
                 >Cách sử dụng như thế nào ?</label
@@ -705,7 +790,7 @@
                 </p>
               </div>
             </div>
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck3" />
               <label class="tab-label" for="chck3"
                 >Những dòng điện thoại nào có thể áp dụng được ?
@@ -726,7 +811,7 @@
                 </p>
               </div>
             </div>
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck4" />
               <label class="tab-label" for="chck4"
                 >Tôi chỉnh sửa thông tin của mình như thế nào ?
@@ -748,7 +833,7 @@
                 </p>
               </div>
             </div>
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck5" />
               <label class="tab-label" for="chck5">Thời gian sử dụng ?</label>
               <div class="tab-content">
@@ -756,7 +841,7 @@
                 hạn số lần chạm thẻ, không giới sạn số lần quét mã QR
               </div>
             </div>
-            <div class="tab hiddenRight">
+            <div class="tab hiddenLeft">
               <input type="checkbox" id="chck6" />
               <label class="tab-label" for="chck6"
                 >Tính bảo mật của sản phẩm ?
@@ -778,55 +863,78 @@
           </div>
         </div>
       </main>
-      <footer class="font-medium">
+      <footer>
         <div class="container">
           <div class="footer-top flex justify-between mb-10">
-            <div class="w-[30%] font-medium">
-              <img
-                src="/assets/images/tony-logo.png"
-                alt=""
-                class="w-[20%] mb-3"
-              />
-              <p class="footer-id mb-4 font-bold">ID-CARD</p>
-              <p class="footer-desc text-[15px] leading-5">
-                ID-CARD là 1 thẻ tích hợp thông tin tương tự danh thiếp điện tử,
-                sử dụng công nghệ đám mây được dùng như 1 danh thiếp vật lý và
-                cả nền tảng online trong cùng 1 tài khoản
+            <div class="w-[33%]">
+              <div class="flex mb-5">
+                <img src="/assets/images/logo.png" alt="" class="footer-logo" />
+              </div>
+              <p class="footer-text text-[15px] leading-5">
+                ID-Connect sinh ra nhằm thay thế các sản phẩm truyền thống bằng
+                cách tích hợp thông tin điện tử, sử dụng công nghệ đám mây được
+                dùng như 1 sản phẩm vật lý và cả nền tảng online trong cùng 1
+                tài khoản
               </p>
             </div>
-            <div class="w-[22%]">
-              <ul>
-                <li>ALL PRODUCT</li>
-                <li>ID.CARD</li>
-                <li>ID.PET</li>
-                <li>ID.STICKER</li>
-                <li>ID.LUGGAGE</li>
-              </ul>
+            <div class="footer-group flex justify-between w-[38%]">
+              <div class="w-[40%]">
+                <ul>
+                  <li>ABOUT</li>
+                  <li>ID.Card</li>
+                  <li>ID.Pet</li>
+                  <li>ID.Sticker</li>
+                  <li>ID.Keychain</li>
+                </ul>
+              </div>
+              <div class="w-[40%]">
+                <ul>
+                  <li>F.A.Q</li>
+                  <li>Sản phẩm</li>
+                  <li>Hướng dẫn</li>
+                  <li>Chính sách</li>
+                  <li>Liên hệ</li>
+                </ul>
+              </div>
             </div>
-            <div class="w-[22%]">
-              <ul>
-                <li>F.A.Q</li>
-                <li>SẢN PHẨM</li>
-                <li>HƯỚNG DẪN</li>
-                <li>CHÍNH SÁCH</li>
-                <li>LIÊN HỆ</li>
+            <div class="follow w-[18%]">
+              <p class="mb-5">Theo dõi chúng tôi</p>
+              <ul class="socials flex justify-between">
+                <li>
+                  <a href="">
+                    <img src="/assets/images/fb.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="/assets/images/ins.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="/assets/images/tiktok.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="/assets/images/pinterest.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="/assets/images/linkedin.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <img src="/assets/images/telegram.png" alt="" />
+                  </a>
+                </li>
               </ul>
-            </div>
-            <div class="w-[20%]">
-              <p class="follow mb-5">Follow us on</p>
-              <ul class="socials flex justify-between mb-5">
-                <li><i class="fa-brands fa-facebook"></i></li>
-                <li><i class="fa-brands fa-twitter"></i></li>
-                <li><i class="fa-brands fa-linkedin-in"></i></li>
-                <li><i class="fa-brands fa-youtube"></i></li>
-                <li><i class="fa-brands fa-instagram"></i></li>
-                <li><i class="fa-brands fa-pinterest"></i></li>
-              </ul>
-              <button class="buy-btn">MUA NGAY</button>
             </div>
           </div>
           <div
-            class="footer-bottom w-[90%] py-[25px] mx-auto text-center text-[14px] border-t-[1px] border-[#6c6789]"
+            class="footer-bottom w-[90%] py-[25px] mx-auto text-center text-[14px] text-[#B3B3BB]"
           >
             2023 © IDCONNECT.ICU WEBSITE - CODE, DEV & DESIGN BY IDG - ALL
             RIGHTS RESERVED
